@@ -1,0 +1,24 @@
+#algoritma penjumlahan biner ke desimal 
+#Konversi Biner Ke Desimal
+def binerKeDesimal(biner):
+    pangkat = len(biner) - 1
+    desimal = 0
+    for i in range(len(biner)):
+        iBin = int(biner[i])
+        iDes = iBin * (2**pangkat)
+        desimal += iDes
+        pangkat -= 1
+    return desimal
+def desimalKeBiner(desimal):
+    biner = ""
+    while(desimal != 0):
+        biner = str(desimal % 2) + biner
+        desimal //= 2
+    return biner
+biner1 = input()
+biner2 = input()
+biner3 = input()
+desimal123 = binerKeDesimal(biner1) + binerKeDesimal(biner2) + binerKeDesimal(biner3)
+hasil = desimalKeBiner(desimal123)
+print(desimal123)
+print(hasil)
